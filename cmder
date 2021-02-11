@@ -1,0 +1,13 @@
+clear=cls
+cmderr=cd /d "%CMDER_ROOT%"
+e.=explorer .
+gl=git log --oneline --all --graph --decorate  $*
+godl=cd "C:\Users\auwwaya\Downloads\"
+gohome=cd C:\Wayan
+history=cat -n "%CMDER_ROOT%\config\.history"
+ls=ls --show-control-chars -al --group-directories-first -F --color $*
+pwd=cd
+search-dm="C:\Wayan\PS\Everything CommandLine\es.exe" -size -sizecolor 13 -dm -dmcolor 11 -sort dm -n 10 $*
+search="C:\Wayan\PS\Everything CommandLine\es.exe" -size -sizecolor 13 -dm -dmcolor 11 -s -n 30 $*
+unalias=alias /d $1
+vi=vim $*
