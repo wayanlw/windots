@@ -38,8 +38,6 @@
 				"cursorShape" : "filledBox",
 				"backgroundImageOpacity" : 0.8,
 				"scrollbarState" : "visible"
-				"snapOnInput" : "visible"
-				
         },
         "list":
         [
