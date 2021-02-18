@@ -1,0 +1,33 @@
+; TyperTask will automate your keyboard when a "signal" is typed.
+; For example, when you type "hth", it will auto type "Hope this helps!"
+; The format of this file is:
+; 
+;    Trigger=Type This Text  (one per line)
+; 
+; Below are some simple entries to get you started.
+; NOTE: Please see the HELP menu for more samples.  Good luck!
+
+
+;filenaming date time
+
+ds  ={{yy}}{{mm}}{{dd}}
+cc  ={{yy}}{{mm}}{{dd}}
+vv  ={{yy}}{{mm}}{{dd}}_{{hh}}{{uu}}
+dst  ={{yy}}{{mm}}{{dd}}_{{hh}}{{uu}}
+re  =Best Regards,{enter}-Wayan
+
+
+;dollar amounts
+nkp  =(-$k){left}{left}
+nmp  =(-$m){left}{left}
+pkp  =(+$k){left}{left}
+pmp  =(+$m){left}{left}
+
+nk  =-$k{left}
+nm  =-$m{left}
+pk  =+$k{left}
+pm  =+$m{left}
+
+
+fav  =favorable 
+unf  =unfavorable 
