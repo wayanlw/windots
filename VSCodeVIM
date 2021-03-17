@@ -1,37 +1,48 @@
-"vim.easymotion": true,
-"vim.handleKeys": {
-    "<C-a>": false,
-    "<C-c>": false,
-    "<C-s>": false,
-    "<C-y>": false,
-    "<C-z>": false
-},
-"vim.hlsearch": true,
-"vim.incsearch": true,
-"vim.insertModeKeyBindings": [
-    { "before": [ "j", "k" ], "after": [ "<Esc>" ] },
-],
-"vim.leader": "<space>",
-"vim.visualModeKeyBindingsNonRecursive": [
-    { "before": [ "<leader>", "d" ], "after": ["d", "d"] },
-    { "before": [ "<leader>", "c" ], "after": ["\"", "+", "y"] },
-    { "before": [ "<leader>", "v" ], "after": ["\"", "+", "p"] },
-    { "before": [ "<leader>", "w" ], "after": [ ":w" ] },
-    { "before": [ "<C-n>" ], "commands": [ ":nohl" ] }
-],
+    "vim.easymotion": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-c>": false,
+        "<C-s>": false,
+        "<C-d>": false,
+        "<C-y>": false,
+        "<C-x>": false,
+        "<C-z>": false
+    },
+    "vim.hlsearch"             : true,
+    "vim.incsearch"            : true,
+    "vim.leader"               : "<space>",
+    "vim.insertModeKeyBindings": [
+        { "before": [ "j", "k" ], "after": [ "<Esc>" ] },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before":  [ "<leader>", "c" ], "after":          ["\"", "+", "y"] },
+        { "before":  [ "<leader>", "v" ], "after":          ["\"", "+", "p"] },
+        { "before":  [ "<leader>", "w" ], "after":          [ ":w" ] },
+        { "before":  [ "<C-n>"         ], "commands":       [ ":nohl" ] }
+    ],
 
-"vim.normalModeKeyBindingsNonRecursive": [
-    { "before": [ "<leader>", "d" ], "after": ["d", "d"] },
-    { "before": [ "<leader>", "c" ], "after": ["\"", "+", "y"] },
-    { "before": [ "<leader>", "v" ], "after": ["\"", "+", "p"] },
-    { "before": [ "<leader>", "p" ], "after": ["\"", "0", "p"] },
-    { "before": [ "<leader>", "w" ], "after": [ ":w" ] },
-    { "before": ["leader", "w"], "commands": [ "workbench.action.files.save"] }
-    { "before": [ "<C-n>" ], "commands": [ ":nohl" ] }
-],
-"vim.visualModeKeyBindings": [
-    { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
-    { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] }
-],
-"vim.useCtrlKeys": true,
-"vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": [ "<leader>", "c" ],        "after":    [ "\"", "+", "y"] },
+        { "before": [ "<leader>", "v" ],        "after":    [ "\"", "+", "p"] },
+        { "before": [ "<leader>", "h" ],        "after":    [ "_" ] },
+        { "before": [ "<leader>", "l" ],        "after":    [ "$" ] },
+        { "before": [ "<leader>", "q" ],        "commands": [ "workbench.action.closeActiveEditor"] },
+        { "before": [ "<leader>", "w" ],        "commands": [ "workbench.action.files.save" ] },
+        { "before": [ "<leader>", "s" ],        "commands": [ "workbench.action.splitEditor" ] },
+        { "before": [ "<tab>"],                 "commands": [ "workbench.action.nextEditor" ] },
+        { "before": [ "<S-tab>"],               "commands": [ "workbench.action.previousEditor" ] },
+        { "before": [ "<C-n>"         ],        "commands": [ ":nohl" ] },
+        { "before": [ "<leader>", "e" ],        "commands": [ "workbench.action.toggleSidebarVisibility" ] },
+        { "before": [ "<leader>", "f" ],        "commands": [ "revealInExplorer" ], },
+        { "before": [ "<leader>", "r", "f"],    "commands": [ "fileutils.renameFile" ] }
+    ],
+    "vim.otherModeKeyBindingsNonRecursive": [
+        { "before" : [ "u" ],     "after" : [], "commands" : [ { "command" : "undo" } ] },
+        { "before" : [ "<C-r>" ], "after" : [], "commands" : [ { "command" : "redo" } ] }
+    ],
+    "vim.visualModeKeyBindings": [
+        { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
+        { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] }
+    ],
+    "vim.useCtrlKeys"       : true,
+    "vim.useSystemClipboard": true,
