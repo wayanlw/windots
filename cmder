@@ -11,3 +11,48 @@ search-dm="C:\Wayan\PS\Everything CommandLine\es.exe" -size -sizecolor 13 -dm -d
 search="C:\Wayan\PS\Everything CommandLine\es.exe" -size -sizecolor 13 -dm -dmcolor 11 -s -n 30 $*
 unalias=alias /d $1
 vi=vim $*
+
+
+V2 -------------------------------------------------------------------
+
+
+
+; -------------------------------------- Aliases
+
+; if installed with scoop this file is located in C:\Scoop\persist\cmder\config
+ ;= @echo off
+;= rem Call DOSKEY and use this file as the macrofile
+;= %SystemRoot%\system32\doskey /listsize=1000 /macrofile=%0%
+;= rem In batch mode, jump to the end of the file
+;= goto:eof
+;= Add aliases below here
+e.=explorer .
+gl=git log --oneline --all --graph --decorate  $*
+ls=ls --show-control-chars -al --group-directories-first -F --color $*
+pwd=cd
+clear=cls
+history=cat -n "%CMDER_ROOT%\config\.history"
+unalias=alias /d $1
+vi=vim $*
+cmderr=cd /d "%CMDER_ROOT%"
+
+;=--------- scoop commands
+;=scins=scoop install $*
+;=scinf=scoop info $*
+;=scrm=scoop uninstall $*
+;=scsr=scoop search $* 
+
+;=--------- folder commands
+godl = cd "C:\Users\auwwaya\Downloads\"
+gohome=cd C:\Wayan 
+
+;=--------- tools commands
+search-dm="C:\Wayan\PS\Everything CommandLine\es.exe" -size -sizecolor 13 -dm -dmcolor 11 -sort dm -n 10 $*
+search="C:\Wayan\PS\Everything CommandLine\es.exe" -size -sizecolor 13 -dm -dmcolor 11 -s -n 30 $*
+sherlock=python "C:\Wayan\OSINT\sherlock\sherlock\sherloc
+
+
+; Python scripts folder is not in the path. pip is not recognized 
+- Go to settings 
+- Go to startup> environment and add
+    - set PATH=%ConEmuBaseDir%\Scripts;C:\Scoop\apps\python\current\Scripts;%PATH%
