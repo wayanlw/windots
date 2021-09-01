@@ -32,7 +32,7 @@
             // Put settings here that you want to apply to all profiles.
 				"colorScheme" : "One Half Dark",
 				"startingDirectory": "C:/Wayan/learn/Python",
-				"fontFace" : "consolas",
+				"fontFace" : "Consolas",
 				"fontSize" : 10,
 				"fontWeight" : "extra-light",
 				"cursorShape" : "filledBox",
