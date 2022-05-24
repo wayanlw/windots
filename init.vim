@@ -32,7 +32,7 @@ map -     <C-W>s<C-W><Down>
 " Fast saving and quitting
 nmap <leader>w :w!<cr>
 nmap <leader>wq :wq!<cr>
-nmap <leader>q :q!<cr>
+nmap <leader>e :q!<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
