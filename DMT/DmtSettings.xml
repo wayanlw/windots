@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+	<setting name="WallpaperChanger__Fit" value="248" />
+	<setting name="___FirstRun" value="False" />
+	<setting name="Cursor__MinStickyForce" value="0" />
+	<setting name="Cursor__FreeMovementKey" value="162" />
+	<setting name="Cursor__FreeMovementButton" value="1048576" />
+	<setting name="Cursor__DefaultCursorMode" value="0" />
+	<setting name="Launcher__MaxIcons" value="8" />
+	<setting name="Launcher__StartupTimeout" value="60" />
+	<setting name="Snap__MaxSnaps" value="8" />
+	<setting name="Snap__AutoShowSnap" value="True" />
+	<setting name="Snap__MaintainAspectRatio" value="True" />
+	<setting name="SwapScreen__SwapTop2HotKey" value="17104979" />
+	<setting name="SwapScreen__SupersizeHotKey" value="327745" />
+	<setting name="SwapScreen__BorderOutsideSda" value="True" />
+	<setting name="SwapScreen__SdaModifiers" value="131072,524288,65536,655360,589824,196608,720896" />
+	<setting name="SwapScreen__EnableSdas" value="True" />
+	<setting name="SwapScreen__UDA0Description" value="Screen 1" />
+	<setting name="SwapScreen__UDA0HotKey" value="17104945" />
+	<setting name="SwapScreen__UDA0Rectangle" value="4,3,1910,1041" />
+	<setting name="SwapScreen__UDA1Description" value="Screen 2" />
+	<setting name="SwapScreen__UDA1HotKey" value="17104946" />
+	<setting name="SwapScreen__UDA1Rectangle" value="1926,3,1910,1041" />
+	<setting name="SwapScreen__UDA2Description" value="Main" />
+	<setting name="SwapScreen__UDA2HotKey" value="17104965" />
+	<setting name="SwapScreen__UDA2Rectangle" value="0,0,960,1050" />
+	<setting name="SwapScreen__UDA3Description" value="Sub" />
+	<setting name="SwapScreen__UDA3HotKey" value="17104978" />
+	<setting name="SwapScreen__UDA3Rectangle" value="950,0,970,1050" />
+	<setting name="WallpaperChanger__IntervalHours" value="0" />
+	<setting name="WallpaperChanger__MonitorMapping" value="3" />
+	<setting name="WallpaperChanger__ChangeOnStartup" value="True" />
+	<setting name="WallpaperChanger__ChangePeriodically" value="True" />
+	<setting name="WallpaperChanger__SmoothFade" value="False" />
+	<setting name="WallpaperChanger__IntervalMinutes" value="10" />
+	<setting name="WallpaperChanger__ChangeWallpaperHotKey" value="17104983" />
+	<setting name="WallpaperChanger__FlickrApiKey" value="ee105a2e3d162330c7c4a6b54eb68d75" />
+	<setting name="SwapScreen__RotateNextHotKey" value="16973863" />
+	<setting name="Snap__ShowSnapHotKey" value="327751" />
+	<setting name="Snap__TakeSnapHotKey" value="27" />
+	<setting name="Snap__TakeWinSnapHotKey" value="327707" />
+	<setting name="Launcher__ActivateHotKey" value="327747" />
+	<setting name="Launcher__EntryFormPosition" value="771,423,377,234" />
+	<setting name="SwapScreen__UDA4Description" value="2-Left" />
+	<setting name="SwapScreen__UDA4HotKey" value="17104947" />
+	<setting name="SwapScreen__UDA4Rectangle" value="1920,0,960,1050" />
+	<setting name="SwapScreen__MinimiseAllButHotKey" value="327745" />
+	<setting name="Cursor__CursorToNextScreenHotKey" value="327715" />
+	<setting name="Cursor__CursorToPrevScreenHotKey" value="327768" />
+	<setting name="SwapScreen__UDA5Description" value="2 right" />
+	<setting name="SwapScreen__UDA5HotKey" value="17104948" />
+	<setting name="SwapScreen__UDA5Rectangle" value="2875,0,970,1055" />
+	<setting name="SwapScreen__UDA6Description" value="2/3" />
+	<setting name="SwapScreen__UDA6HotKey" value="327731" />
+	<setting name="SwapScreen__UDA6Rectangle" value="0,0,1289,1050" />
+	<setting name="SwapScreen__UDA7Description" value="1/3" />
+	<setting name="SwapScreen__UDA7HotKey" value="327732" />
+	<setting name="SwapScreen__UDA7Rectangle" value="1286,0,634,1050" />
+	<setting name="SwapScreen__NextScreenHotKey" value="17104986" />
+	<setting name="Launcher__UseMru" value="True" />
+	<setting name="Launcher__IconView" value="1" />
+	<setting name="SwapScreen__SnapLeftHotKey" value="327754" />
+	<setting name="SwapScreen__SnapRightHotKey" value="327756" />
+	<setting name="SwapScreen__MaximiseHotKey" value="327753" />
+	<setting name="SwapScreen__MinimiseHotKey" value="327755" />
+</settings>

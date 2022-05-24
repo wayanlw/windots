@@ -1,0 +1,1 @@
+Place this file in the Dual Monitor tool folder where the dmt.exe is in

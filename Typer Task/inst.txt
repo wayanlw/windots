@@ -1,0 +1,1 @@
+Copy and paste it in the Typer task config file
