@@ -3,7 +3,6 @@
 ### From https://gist.github.com/timsneath/19867b12eee7fd5af2ba
 ### From https://raw.githubusercontent.com/ChrisTitusTech/powershell-profile/main/Microsoft.PowerShell_profile.ps1
 ### This file should be stored in $PROFILE.CurrentUserAllHosts
-### You can find the location that the profile.ps1 file should be in, by typing $PROFILE
 ### If $PROFILE.CurrentUserAllHosts doesn't exist, you can make one with the following:
 ###    PS> New-Item $PROFILE.CurrentUserAllHosts -ItemType File -Force
 ### This will create the file and the containing subdirectory if it doesn't already 
@@ -13,6 +12,50 @@
 ###   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ### This is the default policy on Windows Server 2012 R2 and above for server Windows. For 
 ### more information about execution policies, run Get-Help about_Execution_Policies.
+
+
+
+
+# scoop
+function sci {
+       scoop install $args
+}
+
+function scs($name) {
+        scoop search $name
+}
+
+function scu {
+        scoop uninstall $args
+}
+
+function scuall($name) {
+        scoop uninstall -p $name
+}
+
+function scl {
+        scoop list $*
+}
+
+function scup {
+        scoop update $args
+}
+
+function scinf($name) {
+        scoop info "*${name}*"
+}
+
+function scupall() {
+        scoop update *
+}
+
+function sclean() {
+        scoop cleanup *
+}
+
+function reload-profile {
+        & $profile
+}
 
 
 # Simple function to start a new elevated process. If arguments are supplied then 
@@ -42,39 +85,11 @@ Set-Alias -Name sudo -Value admin
 # Quick shortcut to start notepad
 function n      { notepad $args }
 
-
-
-# scoop
-function si($name) {
-        scoop install "*${name}*"
-}
-
-function ss($name) {
-        scoop search "*${name}*"
-}
-
-function sr($name) {
-        scoop uninstall -p "*${name}*"
-}
-
-function sup($name) {
-        scoop update "*${name}*"
-}
-
-function sinf($name) {
-        scoop info "*${name}*"
-}
-
-function supall() {
-        scoop update *
-}
-
-function sclean() {
-        scoop scleanup *
-}
-
-function reload-profile {
-        & $profile
+function find-file($name) {
+        Get-ChildItem -recurse -filter "*${name}*" -ErrorAction SilentlyContinue | ForEach-Object {
+                $place_path = $_.directory
+                Write-Output "${place_path}\${_}"
+        }
 }
 
 
@@ -130,6 +145,17 @@ function pgrep($name) {
 }
 
 # Setting Editor
+
+Function Test-CommandExists
+{
+ Param ($command)
+ $oldPreference = $ErrorActionPreference
+ $ErrorActionPreference = 'SilentlyContinue'
+ try {if(Get-Command $command){RETURN $true}}
+ Catch {Write-Host "$command does not exist"; RETURN $false}
+ Finally {$ErrorActionPreference=$oldPreference}
+} 
+#
 
 if (Test-CommandExists nvim) {
     $EDITOR='nvim'
