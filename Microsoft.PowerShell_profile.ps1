@@ -3,6 +3,7 @@
 ### From https://gist.github.com/timsneath/19867b12eee7fd5af2ba
 ### From https://raw.githubusercontent.com/ChrisTitusTech/powershell-profile/main/Microsoft.PowerShell_profile.ps1
 ### This file should be stored in $PROFILE.CurrentUserAllHosts
+### You can find the location that the profile.ps1 file should be in, by typing $PROFILE
 ### If $PROFILE.CurrentUserAllHosts doesn't exist, you can make one with the following:
 ###    PS> New-Item $PROFILE.CurrentUserAllHosts -ItemType File -Force
 ### This will create the file and the containing subdirectory if it doesn't already 
