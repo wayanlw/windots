@@ -13,10 +13,10 @@
 ### This is the default policy on Windows Server 2012 R2 and above for server Windows. For 
 ### more information about execution policies, run Get-Help about_Execution_Policies.
 
-
+# ────────────────────────────────── PROMPT ────────────────────────────────── #
 function Global:prompt {"`nPS[$Env:username] $PWD > "} 
 
-# scoop
+# ─────────────────────────────────── scoop ────────────────────────────────── #
 function sci {
        scoop install $args
 }
@@ -57,6 +57,7 @@ function reload-profile {
         & $profile
 }
 
+# ────────────────────────────── admin function ────────────────────────────── #
 
 # Simple function to start a new elevated process. If arguments are supplied then 
 # a single command is started with admin rights; if not then a new admin instance
@@ -81,9 +82,11 @@ Set-Alias -Name sudo -Value admin
 
 
 
-
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+#                                Other Functions                               #
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 # Quick shortcut to start notepad
-function n      { notepad $args }
+function n { notepad $args }
 
 function find-file($name) {
         Get-ChildItem -recurse -filter "*${name}*" -ErrorAction SilentlyContinue | ForEach-Object {
