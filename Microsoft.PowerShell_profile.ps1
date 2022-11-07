@@ -14,7 +14,7 @@
 ### more information about execution policies, run Get-Help about_Execution_Policies.
 
 
-
+function Global:prompt {"`nPS[$Env:username] $PWD > "} 
 
 # scoop
 function sci {
