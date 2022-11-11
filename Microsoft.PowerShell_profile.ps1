@@ -42,7 +42,7 @@ function scup {
 }
 
 function scinf($name) {
-        scoop info "*${name}*"
+        scoop info $name
 }
 
 function scupall() {
