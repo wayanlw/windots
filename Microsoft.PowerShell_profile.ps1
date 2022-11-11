@@ -34,7 +34,7 @@ function scuall($name) {
 }
 
 function scl {
-        scoop list $*
+        scoop list
 }
 
 function scup {
