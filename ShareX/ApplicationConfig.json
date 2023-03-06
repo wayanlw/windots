@@ -32,6 +32,7 @@
       "ToastWindowLeftClickAction": "OpenUrl",
       "ToastWindowRightClickAction": "CloseNotification",
       "ToastWindowMiddleClickAction": "AnnotateImage",
+      "ToastWindowAutoHide": true,
       "UseCustomCaptureSound": false,
       "CustomCaptureSoundPath": "",
       "UseCustomTaskCompletedSound": false,
@@ -162,9 +163,9 @@
           }
         ],
         "ShowInfo": true,
-        "ShowMagnifier": false,
+        "ShowMagnifier": true,
         "UseSquareMagnifier": false,
-        "MagnifierPixelCount": 15,
+        "MagnifierPixelCount": 21,
         "MagnifierPixelSize": 10,
         "ShowCrosshair": false,
         "UseLightResizeNodes": false,
@@ -172,6 +173,7 @@
         "IsFixedSize": false,
         "FixedSize": "250, 250",
         "ShowFPS": false,
+        "FPSLimit": 100,
         "MenuIconSize": 16,
         "MenuLocked": false,
         "RememberMenuState": false,
@@ -179,7 +181,8 @@
         "MenuPosition": "0, 0",
         "InputDelay": 500,
         "SwitchToDrawingToolAfterSelection": true,
-        "SwitchToSelectionToolAfterDrawing": true,
+        "SwitchToSelectionToolAfterDrawing": false,
+        "ActiveMonitorMode": false,
         "AnnotationOptions": {
           "ImageInterpolationMode": "NearestNeighbor",
           "StickerPacks": [
@@ -191,7 +194,7 @@
           "SelectedStickerPack": 0,
           "RegionCornerRadius": 0,
           "BorderColor": "242, 60, 60",
-          "BorderSize": 2,
+          "BorderSize": 6,
           "BorderStyle": "Solid",
           "FillColor": "0, 0, 0, 0",
           "DrawingCornerRadius": 0,
@@ -244,17 +247,20 @@
           "LastStickerPath": "C:\\Scoop\\apps\\sharex\\current\\Stickers\\BlobEmoji\\blobbandage.png",
           "BlurRadius": 35,
           "PixelateSize": 15,
-          "HighlightColor": "Yellow"
+          "HighlightColor": "Yellow",
+          "CutOutEffectType": "None",
+          "CutOutEffectSize": 10
         },
         "LastRegionTool": "RegionRectangle",
         "LastAnnotationTool": "ToolSelect",
-        "LastEditorTool": "ToolSelect",
-        "ImageEditorStartMode": "AutoSize",
+        "LastEditorTool": "DrawingStep",
+        "ImageEditorStartMode": "PreviousState",
         "ImageEditorWindowState": {
-          "Location": "0, 0",
-          "Size": "0, 0",
+          "Location": "281, 189",
+          "Size": "1356, 692",
           "IsMaximized": false
         },
+        "ZoomToFitOnOpen": false,
         "EditorAutoCopyImage": false,
         "AutoCloseEditorOnTask": false,
         "ShowEditorPanTip": false,
@@ -282,21 +288,23 @@
         "CustomCommands": "-rtbufsize 150M -f gdigrab -framerate 20 -offset_x 0 -offset_y 0 -video_size 1920x1080 -draw_mouse 1 -i desktop -f dshow -i audio=\"Microphone Array (Realtek(R) Audio)\" -c:v libx264 -r 20 -preset ultrafast -tune zerolatency -crf 28 -pix_fmt yuv420p -movflags +faststart -c:a aac -ac 2 -b:a 128k -y \"output.mp4\"",
         "x264_Preset": "ultrafast",
         "x264_CRF": 28,
-        "VPx_bitrate": 3000,
-        "XviD_qscale": 10,
-        "NVENC_preset": "llhp",
-        "NVENC_bitrate": 3000,
+        "x264_Use_Bitrate": false,
+        "x264_Bitrate": 3000,
+        "VPx_Bitrate": 3000,
+        "XviD_QScale": 10,
+        "NVENC_Preset": "llhp",
+        "NVENC_Bitrate": 3000,
         "GIFStatsMode": "full",
         "GIFDither": "sierra2_4a",
         "GIFBayerScale": 2,
-        "AMF_usage": "transcoding",
-        "AMF_quality": "speed",
-        "QSV_preset": "fast",
-        "QSV_bitrate": 3000,
-        "AAC_bitrate": 128,
-        "Opus_bitrate": 128,
-        "Vorbis_qscale": 3,
-        "MP3_qscale": 4
+        "AMF_Usage": "transcoding",
+        "AMF_Quality": "speed",
+        "QSV_Preset": "fast",
+        "QSV_Bitrate": 3000,
+        "AAC_Bitrate": 128,
+        "Opus_Bitrate": 128,
+        "Vorbis_QScale": 3,
+        "MP3_QScale": 4
       },
       "ScreenRecordFPS": 20,
       "GIFFPS": 15,
@@ -329,12 +337,26 @@
         "AutoUpload": false
       },
       "OCROptions": {
-        "Permission": true,
-        "DefaultLanguage": "eng",
-        "DefaultSite": "GoogleTranslate",
+        "Language": "en-GB",
+        "ScaleFactor": 2.0,
+        "SingleLine": false,
         "Silent": false,
-        "ProcessOnLoad": false,
-        "AutoCopy": false
+        "AutoCopy": false,
+        "ServiceLinks": [
+          {
+            "Name": "Google Translate",
+            "URL": "https://translate.google.com/?sl=auto&tl=en&text={0}&op=translate"
+          },
+          {
+            "Name": "Google Search",
+            "URL": "https://www.google.com/search?q={0}"
+          },
+          {
+            "Name": "Bing",
+            "URL": "https://www.bing.com/search?q={0}"
+          }
+        ],
+        "SelectedServiceLink": 0
       }
     },
     "UseDefaultUploadSettings": true,
@@ -349,7 +371,7 @@
         "AdjustmentRules": null,
         "SupportsDaylightSavingTime": false
       },
-      "NameFormatPattern": "%ra{10}",
+      "NameFormatPattern": "%yy%mo%d_%h%mi_%ra{3}",
       "NameFormatPatternActiveWindow": "%pn_%ra{10}",
       "FileUploadUseNamePattern": false,
       "FileUploadReplaceProblematicCharacters": false,
@@ -400,6 +422,7 @@
         "Orientation": "Vertical",
         "Alignment": "LeftOrTop",
         "Space": 0,
+        "WrapAfter": 0,
         "AutoFillBackground": false
       },
       "VideoConverterOptions": {
@@ -511,7 +534,7 @@
   },
   "FirstTimeRunDate": "2021-03-22T21:24:22.4371266Z",
   "FileUploadDefaultDirectory": "",
-  "NameParserAutoIncrementNumber": 0,
+  "NameParserAutoIncrementNumber": 63,
   "QuickTaskPresets": [
     {
       "Name": "Save, Upload, Copy URL",
@@ -560,7 +583,15 @@
     }
   ],
   "FirstTimeMinimizeToTray": false,
-  "TaskListViewColumnWidths": [],
+  "TaskListViewColumnWidths": [
+    150,
+    60,
+    125,
+    75,
+    45,
+    45,
+    179
+  ],
   "PreviewSplitterDistance": 335,
   "Language": "Automatic",
   "ShowTray": true,
@@ -569,9 +600,9 @@
   "TaskbarProgressEnabled": true,
   "UseWhiteShareXIcon": false,
   "RememberMainFormPosition": false,
-  "MainFormPosition": "530, 270",
+  "MainFormPosition": "595, 263",
   "RememberMainFormSize": false,
-  "MainFormSize": "1910, 1041",
+  "MainFormSize": "860, 525",
   "TrayLeftClickAction": "RectangleRegion",
   "TrayLeftDoubleClickAction": "OpenMainWindow",
   "TrayMiddleClickAction": "ClipboardUploadWithContentViewer",
@@ -581,24 +612,24 @@
   "Themes": [
     {
       "Name": "Dark",
-      "BackgroundColor": "42, 47, 56",
-      "LightBackgroundColor": "52, 57, 65",
-      "DarkBackgroundColor": "28, 32, 38",
-      "TextColor": "235, 235, 235",
-      "BorderColor": "28, 32, 38",
-      "CheckerColor": "60, 60, 60",
-      "CheckerColor2": "50, 50, 50",
+      "BackgroundColor": "39, 39, 39",
+      "LightBackgroundColor": "46, 46, 46",
+      "DarkBackgroundColor": "34, 34, 34",
+      "TextColor": "231, 233, 234",
+      "BorderColor": "31, 31, 31",
+      "CheckerColor": "46, 46, 46",
+      "CheckerColor2": "39, 39, 39",
       "CheckerSize": 15,
       "LinkColor": "166, 212, 255",
-      "MenuHighlightColor": "30, 34, 40",
-      "MenuHighlightBorderColor": "116, 129, 152",
-      "MenuBorderColor": "22, 26, 31",
-      "MenuCheckBackgroundColor": "56, 64, 75",
+      "MenuHighlightColor": "46, 46, 46",
+      "MenuHighlightBorderColor": "63, 63, 63",
+      "MenuBorderColor": "63, 63, 63",
+      "MenuCheckBackgroundColor": "51, 51, 51",
       "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 10pt",
+      "ContextMenuFont": "Segoe UI, 9.75pt",
       "ContextMenuOpacity": 100,
-      "SeparatorLightColor": "56, 64, 75",
-      "SeparatorDarkColor": "22, 26, 31"
+      "SeparatorLightColor": "44, 44, 44",
+      "SeparatorDarkColor": "31, 31, 31"
     },
     {
       "Name": "Light",
@@ -616,10 +647,31 @@
       "MenuBorderColor": "201, 201, 201",
       "MenuCheckBackgroundColor": "225, 233, 244",
       "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 10pt",
+      "ContextMenuFont": "Segoe UI, 9.75pt",
       "ContextMenuOpacity": 100,
       "SeparatorLightColor": "253, 253, 253",
       "SeparatorDarkColor": "189, 189, 189"
+    },
+    {
+      "Name": "Night",
+      "BackgroundColor": "42, 47, 56",
+      "LightBackgroundColor": "52, 57, 65",
+      "DarkBackgroundColor": "28, 32, 38",
+      "TextColor": "235, 235, 235",
+      "BorderColor": "28, 32, 38",
+      "CheckerColor": "60, 60, 60",
+      "CheckerColor2": "50, 50, 50",
+      "CheckerSize": 15,
+      "LinkColor": "166, 212, 255",
+      "MenuHighlightColor": "30, 34, 40",
+      "MenuHighlightBorderColor": "116, 129, 152",
+      "MenuBorderColor": "22, 26, 31",
+      "MenuCheckBackgroundColor": "56, 64, 75",
+      "MenuFont": "Segoe UI, 9.75pt",
+      "ContextMenuFont": "Segoe UI, 9.75pt",
+      "ContextMenuOpacity": 100,
+      "SeparatorLightColor": "56, 64, 75",
+      "SeparatorDarkColor": "22, 26, 31"
     },
     {
       "Name": "Nord Dark",
@@ -637,7 +689,7 @@
       "MenuBorderColor": "24, 30, 42",
       "MenuCheckBackgroundColor": "59, 66, 82",
       "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 10pt",
+      "ContextMenuFont": "Segoe UI, 9.75pt",
       "ContextMenuOpacity": 100,
       "SeparatorLightColor": "59, 66, 82",
       "SeparatorDarkColor": "30, 38, 54"
@@ -658,7 +710,7 @@
       "MenuBorderColor": "216, 222, 233",
       "MenuCheckBackgroundColor": "229, 233, 240",
       "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 10pt",
+      "ContextMenuFont": "Segoe UI, 9.75pt",
       "ContextMenuOpacity": 100,
       "SeparatorLightColor": "236, 239, 244",
       "SeparatorDarkColor": "207, 216, 233"
@@ -679,13 +731,13 @@
       "MenuBorderColor": "33, 35, 43",
       "MenuCheckBackgroundColor": "45, 47, 61",
       "MenuFont": "Segoe UI, 9.75pt",
-      "ContextMenuFont": "Segoe UI, 10pt",
+      "ContextMenuFont": "Segoe UI, 9.75pt",
       "ContextMenuOpacity": 100,
       "SeparatorLightColor": "45, 47, 61",
       "SeparatorDarkColor": "33, 35, 43"
     }
   ],
-  "SelectedTheme": 0,
+  "SelectedTheme": 1,
   "UseCustomScreenshotsPath": false,
   "CustomScreenshotsPath": "",
   "SaveImageSubFolderPattern": "%y-%mo",
@@ -699,8 +751,8 @@
   "ShowColumns": true,
   "ImagePreview": "Automatic",
   "ImagePreviewLocation": "Side",
-  "AutoCleanupBackupFiles": false,
-  "AutoCleanupLogFiles": false,
+  "AutoCleanupBackupFiles": true,
+  "AutoCleanupLogFiles": true,
   "CleanupKeepFileCount": 10,
   "ProxySettings": {
     "ProxyMethod": "Manual",
@@ -760,7 +812,6 @@
     "Localhostr",
     "Jira",
     "Lambda",
-    "VideoBin",
     "Teknik",
     "Pomf",
     "Uguu",
@@ -792,7 +843,6 @@
       "IsMaximized": false
     },
     "SplitterDistance": 550,
-    "MaxItemCount": 0,
     "RememberSearchText": false,
     "SearchText": ""
   },
@@ -829,7 +879,7 @@
   "AutoCaptureRepeatTime": 1800.0,
   "AutoCaptureMinimizeToTray": true,
   "AutoCaptureWaitUpload": false,
-  "ScreenRecordRegion": "11, 3, 1896, 1034",
+  "ScreenRecordRegion": "12, 3, 1894, 1032",
   "ActionsToolbarList": [
     "RectangleRegion",
     "PrintScreen",
@@ -893,5 +943,5 @@
   "DropAlignment": "BottomRight",
   "DropOpacity": 100,
   "DropHoverOpacity": 255,
-  "ApplicationVersion": "13.7.0"
+  "ApplicationVersion": "15.0.0"
 }

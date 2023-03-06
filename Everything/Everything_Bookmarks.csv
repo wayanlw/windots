@@ -1,0 +1,37 @@
+Name,Case,Whole Word,Path,Diacritic,Regex,Sort,Descending,Filter,Search,Index,File List,Host,Link Type,Macro,Key,View
+Online\Everything,0,0,0,0,0,Name,0,EVERYTHING,file: | folder:,0,,,1,everything,,
+Online\Everything by Size,0,0,0,0,0,Size,1,EVERYTHING,!FileHistory\ file: | folder:,0,,,1,everythingsize,,
+Online\Folders,0,0,0,0,0,Name,0,EVERYTHING,!FileHistory\ folder:,0,,,1,foldersonly,,
+Online\Empty Folders,0,0,0,0,0,Path,1,FOLDER,!<FileHistory\|C:\> folder: empty:,0,,,1,emptyfolders,,
+Online\Long Folder Names,0,0,0,0,0,Name,0,FOLDER,!<C:\|.dat|FileHistory\> folder: len:>85,0,,,1,longfoldernames,,0
+Online\Files,0,0,0,0,0,Name,0,EVERYTHING,!FileHistory\ file:,0,,,1,filesonly,,
+Online\Long Filenames,0,0,0,0,0,Name,0,VIDEO,!C:\ !.dat !FileHistory\ file: len:>85,0,,,1,longfilenames,,
+Online\Small Files,0,0,0,0,0,Size,0,EVERYTHING,!FileHistory\ file: size:<5MB,0,,,1,smallfiles,,
+Online\Big Files,0,0,0,0,0,Size,1,EVERYTHING,!FileHistory\ file: size:>2gb,0,,,1,bigfiles,,
+Online\Large Duplicate Files,0,0,0,0,0,Name,0,EVERYTHING,!FileHistory\ file: dupe: size:>500mb,0,,,1,largeduplicatefiles,,0
+Online\Large Files on C,0,0,0,0,0,Size,1,EVERYTHING,C:\ !FileHistory\ file: size:>50MB,0,,,1,largefilesc,,0
+Online\Playlists,0,0,0,0,0,Name,0,EVERYTHING,!FileHistory\ ext:cue;xspf;asx;m3u;vlc;wpl,0,,,1,playlists,,
+Online\External Files,0,0,0,0,0,Name,0,EVERYTHING,!<C:\|FileHistory\>,0,,,1,extfiles,,
+Online\External Duplicate Files,0,0,0,0,1,Name,0,EVERYTHING,!<FileHistory\|C:\> file: dupe:,0,,,1,duplicatefiles,,
+Online\External Videos,0,0,0,0,0,Name,0,VIDEO,!<.dat|C:\|FileHistory\>,0,,,1,extvid,,
+Online\External 720p Videos,0,0,0,0,0,Name,0,VIDEO,!<.dat|C:\|FileHistory\> 720p,0,,,1,ext720vids,,
+Online\External 1080p Videos,0,0,0,0,0,Name,0,VIDEO,!<.dat|C:\|FileHistory\> 1080p,0,,,1,ext1080pvids,,
+Online\External 2160p (4K) Videos,0,0,0,0,0,Name,0,VIDEO,!<.dat|C:\|FileHistory\> 4K|2160p,0,,,1,ext4kvids,,
+Online\External Audio,0,0,0,0,0,Name,0,AUDIO,!<.dat|C:\|FileHistory\>,0,,,1,extaudio,,
+Online\External Images,0,0,0,0,0,Name,0,PICTURE,!<.dat|C:\|FileHistory\>,0,,,1,extimages,,
+Online\External Archives,0,0,0,0,0,Name,0,COMPRESSED,!<.dat|C:\|FileHistory\>,0,,,1,extarchives,,
+Online\External Documents,0,0,0,0,0,Name,0,DOCUMENT,!<.dat|C:\|FileHistory\>,0,,,1,extdocuments,,
+Online\External Disc Images,0,0,0,0,0,Name,0,EVERYTHING,!<C:\|FileHistory\> file: size:>90MB ext:dat;iso;mdx;mds;mdf;b5t;b6t;bwt;ccd;cdi;cue;nrg;pdi;isz,0,,,1,extdiscimages,,
+Online\Massive Files,0,0,0,0,0,Size,1,EVERYTHING,!FileHistory\ file: size:>3GB,0,,,1,massivefiles,,0
+Online\Massive Videos,0,0,0,0,0,Size,1,VIDEO,!FileHistory\ size:>3GB,0,,,1,massivevideos,,0
+Online\Massive Archives,0,0,0,0,0,Size,1,COMPRESSED,!FileHistory\ size:>3GB,0,,,1,massivearchives,,0
+Online\Massive Images,0,0,0,0,0,Size,1,PICTURE,!FileHistory\ file: size:>3MB,0,,,1,massiveimages,,0
+Online\Gigantic Videos,0,0,0,0,0,Size,1,VIDEO,!FileHistory\ size:>6GB,0,,,1,giganticvideos,,0
+Online\60FPS Videos,0,0,0,0,0,Name,1,VIDEO,!FileHistory\ --60FPS,0,,,1,60fpsvideos,,0
+Online\Uncommon Videos,0,0,0,0,0,Size,1,VIDEO,!<C:\|FileHistory\> file: ext:wmv;avi;mpg;mpeg;mp2;mpe;m2v;flv;f4p;f4a;f4b;rm;rmvb;asf;amv;3gp;3g2,0,,,1,uncommonvideos,,0
+Online\Duplicate Videos,0,0,0,0,0,Size,1,VIDEO,!C:\ dupe:,0,,,1,dupevideos,,
+Online\Links,0,0,0,0,0,Path,0,EVERYTHING,!<\Windows\|FileHistory\> ext:lnk;url,0,,,1,links,,0
+Online\Torrents and Usenet,0,0,0,0,0,Name,0,EVERYTHING,!FileHistory\ ext:torrent;nzb,0,,,1,torrentsandusenet,,0
+Online\Windows Error Dumps,0,0,0,0,0,Name,0,EVERYTHING,!FileHistory\ minidump\ ext:dmp,0,,,1,windowserrors,,
+Online\Powershell Scripts,0,0,0,0,0,Path,0,EVERYTHING,"!<FileHistory\|C:\Windows\|""C:\Program Files\""|.vscode> ext:ps1",0,,,1,powershellscripts,,0
+Online\Batch and Command Files,0,0,0,0,0,Name,0,EVERYTHING,!FileHistory\ ext:bat;cmd,0,,,1,batchcommand,,

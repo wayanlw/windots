@@ -8,8 +8,8 @@
     "Client_ID": "d297fd441566f99",
     "Client_Secret": "0cfdf9368cbf988e69dff262d0425debd440fcc2",
     "Token": {
-      "access_token": "$DPAPIEncrypted$AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7XPvQt6BD0iAlWlipdEJmwAAAAACAAAAAAADZgAAwAAAABAAAADKrdx/TqR/ohA8d4pRj3G0AAAAAASAAACgAAAAEAAAAOcIpLqT39+IcO618LibnkQwAAAAWW9lZ4lUiufiH1AcvriAI3smqZYXdsC3VuETaaLZGqqVegO34x6h/YdHRnmqCowcFAAAADZvxaCy1coZuyw1rlQ/2EhSBJBp",
-      "refresh_token": "$DPAPIEncrypted$AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7XPvQt6BD0iAlWlipdEJmwAAAAACAAAAAAADZgAAwAAAABAAAADmpT8GpT09h806K9v9RI5CAAAAAASAAACgAAAAEAAAAG8hl7xJBiNGtPpGpGGAZ40wAAAAWN2KugZQFyBJv5x5jz7ej9TfoDvh7P1F2WizjPMv/UNoMBo4aesBYRXeA69P3hYTFAAAAD67p0zQMr4mCrMtxCwoR/WJnwnc",
+      "access_token": "$DPAPIEncrypted$AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfokciRflh0q6Iq2tHjniSwAAAAACAAAAAAADZgAAwAAAABAAAAAAnQ+Caqsw4+gCSM+VFGPdAAAAAASAAACgAAAAEAAAAJ2+ZjMFU70Zf461UHcW3TowAAAAZmF0XJgxnLLAk1zQ2z8t4iOKpf0VDBYIO4iBoQRtvxK/g46xTogunHP6VeSbcrkuFAAAAHdO73kixhi+pf8wpmYMOO+tAlET",
+      "refresh_token": "$DPAPIEncrypted$AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfokciRflh0q6Iq2tHjniSwAAAAACAAAAAAADZgAAwAAAABAAAACKCdeUtNqdc03fj2OMCiwOAAAAAASAAACgAAAAEAAAAI3M+k13DgCsJbE+8XxSu3QwAAAAN154pcxQisulbg66GECY30MB0e1R4Ivhxxdqo4BK+N/LKJDDy4LJdlZD75tNYCbLFAAAACY51+X7gMoAKd7yBTNMQs3o/Jvt",
       "expires_in": 315360000,
       "token_type": "bearer",
       "scope": null,
@@ -98,6 +98,7 @@
   "GfycatKeepAudio": true,
   "GfycatTitle": "ShareX",
   "GoogleDriveOAuth2Info": null,
+  "GoogleDriveUserInfo": null,
   "GoogleDriveIsPublic": true,
   "GoogleDriveDirectLink": false,
   "GoogleDriveUseFolder": false,
@@ -215,7 +216,6 @@
   "SeafileSharePassword": "",
   "SeafileAccInfoEmail": "",
   "SeafileAccInfoUsage": "",
-  "StreamableAnonymous": true,
   "StreamableUsername": "",
   "StreamablePassword": "",
   "StreamableUseDirectURL": false,
@@ -245,10 +245,12 @@
     "Comment": ""
   },
   "YouTubeOAuth2Info": null,
+  "YouTubeUserInfo": null,
   "YouTubePrivacyType": "Public",
   "YouTubeUseShortenedLink": false,
   "YouTubeShowDialog": false,
   "GoogleCloudStorageOAuth2Info": null,
+  "GoogleCloudStorageUserInfo": null,
   "GoogleCloudStorageBucket": "",
   "GoogleCloudStorageDomain": "",
   "GoogleCloudStorageObjectPrefix": "ShareX/%y/%mo",
@@ -295,5 +297,5 @@
   "CustomFileUploaderSelected": 0,
   "CustomURLShortenerSelected": 0,
   "CustomURLSharingServiceSelected": 0,
-  "ApplicationVersion": "13.7.0"
+  "ApplicationVersion": "15.0.0"
 }
