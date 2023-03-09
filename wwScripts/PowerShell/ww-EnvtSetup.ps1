@@ -37,22 +37,35 @@ if ($result.ToLower() -eq "y") {
 		scoop install git aria2
 		scoop bucket add extras
 		$programs = @(
-			"vivaldi",
-			"everything",
-			"ditto",
-			"switcheroo",
-			"executor",
-			"sharex",
-			"notepadplusplus",
-			"mpv",
-			"sumatrapdf",
-			"windows-terminal",
+			"7tt",
+			"beeftext",
+			"capture2text",
 			"cmder",
+			"cryptomator",
+			"dark",
+			"ditto",
+			"docto",
 			"dual-monitor-tools",
-			"flux",
+			"everything",
+			"executor",
+			"flameshot",
 			"freecommander",
+			"irfanview-lean",
 			"keepassxc",
-			"docto"
+			"mousejiggler",
+			"mpv",
+			"nomacs",
+			"notepadplusplus",
+			"processhacker",
+			"quicklook",
+			"sharex",
+			"sumatrapdf",
+			"switcheroo",
+			"vscode",
+			"whatsapp",
+			"windirstat",
+			"windows-terminal",
+			"xmousebuttoncontrol",
 		)
 		# Create an empty array to store the program names to be installed
 		$installPrograms = @()
@@ -75,7 +88,7 @@ if ($result.ToLower() -eq "y") {
 			}
 		}
 
-	
+
 	}
 	else {
 	Write-Host "Scoop is not installed. Skipping installation."
@@ -99,19 +112,28 @@ if (Test-Path $contextPaths) {
 	}
 }
 
+# ──────────────────────────────────────────────────────────────────────────── #
+#                             Copying Setting Files                            #
+# ──────────────────────────────────────────────────────────────────────────── #
+
+Copy-Item "$([Environment]::GetFolderPath('MyDocuments'))\Git Repositories\.windot\DMT\DmtSettings.xml" -Destination "C:\Users\$env:UserName\scoop\apps\persist\dual-monitor-tools\DmtSettings.xml" -Force
+Copy-Item "$([Environment]::GetFolderPath('MyDocuments'))\Git Repositories\.windot\BeefText\comboList.json" -Destination "C:\Users\$env:UserName\scoop\apps\persist\beeftext\Data\comboList.json" -Force
+Copy-Item "$([Environment]::GetFolderPath('MyDocuments'))\Git Repositories\.windot\Excutor\Executor.ini" -Destination "C:\Users\$env:UserName\AppData\Roaming\Executor\executor.ini" -Force
+
+
 # ———————————————————————————————————————————————————————————————————————————— #
 #                          Creating startup shortcuts                          #
 # ———————————————————————————————————————————————————————————————————————————— #
 
-# Define an array of program names to install and create startup shortcuts for
+# Define the list of startup programs
 $startupPrograms = @(
-    "vivaldi",
-    "everything",
-    "ditto",
-    "switcheroo",
-    "executor",
-    "sharex",
-    "notepadplusplus"
+    "C:\Users\$env:UserName\scoop\apps\everything\current\everything.exe",
+    "C:\Users\$env:UserName\scoop\apps\ditto\current\ditto.exe",
+    "C:\Users\$env:UserName\scoop\apps\switcheroo\current\switcheroo.exe",
+    "C:\Users\$env:UserName\scoop\apps\executor\current\executor.exe",
+    "C:\Users\$env:UserName\scoop\apps\sharex\current\sharex.exe",
+    "C:\Users\$env:UserName\scoop\apps\notepadplusplus\current\notepad++.exe",
+    "C:\Users\$env:UserName\scoop\apps\dual-monitor-tools\current\DMT.exe"
 )
 
 # Define the path to the Startup folder
@@ -119,19 +141,22 @@ $StartupFolder = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 
 # Loop through the array and check if each program's exe file exists
 foreach ($startupProgram in $startupPrograms) {
-    $exePath = "C:\Users\$env:UserName\scoop\apps\$startupProgram\current\$startupProgram.exe"
 
-    if (Test-Path $exePath) {
+    if (Test-Path $startupProgram) {
+        # Get the name of the executable file
+        $exeName = Split-Path $startupProgram -Leaf
+
         # Check if a shortcut already exists in the Startup folder
-        $shortcutPath = Join-Path $StartupFolder "$startupProgram.lnk"
+        $shortcutPath = Join-Path $StartupFolder "$exeName.lnk"
         if (!(Test-Path $shortcutPath)) {
             # Create a new shortcut in the Startup folder
             $WScriptShell = New-Object -ComObject WScript.Shell
             $Shortcut = $WScriptShell.CreateShortcut($shortcutPath)
-            $Shortcut.TargetPath = $exePath
+            $Shortcut.TargetPath = $startupProgram
             $Shortcut.Save()
 
             Write-Host "Shortcut for $startupProgram created in Startup folder."
+			& $shortcutPath
         } else {
             Write-Host "Shortcut for $startupProgram already exists in Startup folder."
         }
@@ -139,6 +164,10 @@ foreach ($startupProgram in $startupPrograms) {
         Write-Host "$startupProgram not installed or executable not found."
     }
 }
+
+
+
+
 
 # ———————————————————————————————————————————————————————————————————————————— #
 #                 Activating the old windows menu if Windows 11                #
