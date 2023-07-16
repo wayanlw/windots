@@ -1,4 +1,6 @@
 
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
 # ———————————————————————————————————————————————————————————————————————————— #
 #                                 Install Scoop                                #
 # ———————————————————————————————————————————————————————————————————————————— #
@@ -64,8 +66,7 @@ if ($result.ToLower() -eq "y") {
 			"vscode",
 			"whatsapp",
 			"windirstat",
-			"windows-terminal",
-			"xmousebuttoncontrol",
+			"windows-terminal"
 		)
 		# Create an empty array to store the program names to be installed
 		$installPrograms = @()
