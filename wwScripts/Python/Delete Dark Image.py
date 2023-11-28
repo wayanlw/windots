@@ -43,7 +43,7 @@ import os
 
 # Recursilvely Goes through the foldre in the folder_path and remove any filest that has
 
-folder_path = r"C:\Wayan\Automatic Screen Shots\2023-03-05"
+folder_path = r"C:\Wayan\Automatic Screen Shots\Temp"
 
 darkness_threshold = 50  # Change this to adjust the darkness threshold
 dark_pixel_pct = 0.99  # Change this to adjust the minimum percentage of dark pixels
