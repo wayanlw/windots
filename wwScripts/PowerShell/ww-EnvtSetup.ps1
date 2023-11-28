@@ -65,7 +65,7 @@ if ($result.ToLower() -eq "y") {
 			"whatsapp",
 			"windirstat",
 			"windows-terminal",
-			"xmousebuttoncontrol",
+			"xmousebuttoncontrol"
 		)
 		# Create an empty array to store the program names to be installed
 		$installPrograms = @()
@@ -221,7 +221,7 @@ $shortcut.Save()
 # ———————————————————————————————————————————————————————————————————————————— #
 #                              Powershell Profile                              #
 # ———————————————————————————————————————————————————————————————————————————— #
-$profilePath = "$([Environment]::GetFolderPath('MyDocuments'))\Git Repositories\.windot\Windows PowerShell\profile.ps1"
+$profilePath = "$([Environment]::GetFolderPath('MyDocuments'))\Git Repositories\.windot\Windows PowerShell\Microsoft.PowerShell_profile.ps1"
 $psFolder = $PROFILE.CurrentUserAllHosts | Split-Path
 
 if (!(Test-Path $psFolder)) {
