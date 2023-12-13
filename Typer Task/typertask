@@ -1,20 +1,42 @@
 ; TyperTask will automate your keyboard when a "signal" is typed.
 ; For example, when you type "hth", it will auto type "Hope this helps!"
 ; The format of this file is:
-; 
+;
 ;    Trigger=Type This Text  (one per line)
-; 
+;
 ; Below are some simple entries to get you started.
 ; NOTE: Please see the HELP menu for more samples.  Good luck!
 
 ;--------------filenaming date time
 
-qq={{yy}}{{mm}}{{dd}}
-zz={{dd}}.{{mm}}.{{yyyy}}
-vv ={{yy}}{{mm}}{{dd}}_{{hh}}{{uu}}
+dd  ={{yy}}{{mm}}{{dd}}
+ds  ={{dd}}.{{mm}}.{{yyyy}}
+
+vv  ={{yy}}{{mm}}{{dd}}_{{hh}}{{uu}}
+
+
 re  =Best Regards,{enter}-Wayan
 
 
+
+
+
+;--------------Email
+:meet=Objective{enter}	- x{enter}{enter}Agenda{enter}	- {up}{up}{delete}
+
+
+
+;--------------App Launch
+;{F7}=RUN: vivaldi.exe{Delay=1000}RUN:wt.exe
+
+
+;--------------Contact Info
+:siri=0482165487
+:lux=luxithaw@gmail.com
+:lak=lakshithaw@gmail.com
+:ess=wayan.wijesinghe@essity.com
+:add=42 Weston Street, Keysborough VIC 3173
+:can=Can you please give me a call when you're free?
 
 
 ;--------------ESC
@@ -22,17 +44,35 @@ re  =Best Regards,{enter}-Wayan
 ;jj={enter}
 j;={escape}
 
-;dollar amounts
-nkp  =(-$k){left}{left}
-nmp  =(-$m){left}{left}
-pkp  =(+$k){left}{left}
-pmp  =(+$m){left}{left}
+;--------------dollar amounts
+
+pnk  =(-$k){left}{left}
+pnm  =(-$m){left}{left}
+ppk  =(+$k){left}{left}
+ppm  =(+$m){left}{left}
 
 nk  =-$k{left}
+
 nm  =-$m{left}
+
 pk  =+$k{left}
+
 pm  =+$m{left}
 
 
-fav  =favorable 
-unf  =unfavorable 
+:com=+N(""){left}{left}
+
+;--------------Smileys
+-------------
+:100:=\U0001F4AF
+:score:=\U0001F4AF
+:perfect:=\U0001F4AF
+:1234:=\U0001F522
+:numbers:=\U0001F522
+:grinning:=\U0001F600
+:happy:=\U0001F600
+:smiley:=\U0001F603
+:haha:=\U0001F603
+:smile:=\U0001F604
+
+:mdlink=[]({controldown}v{controlup})
