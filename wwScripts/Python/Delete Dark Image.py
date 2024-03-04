@@ -37,13 +37,13 @@
 
 # ───────────────────────────────── Option 2 ───────────────────────────────── #
 # Has two variables to define the darkdness threshold (0-255) and % of pixels that are less than darkness_threshold. And then deltes them
-
+# If not already install PIL by running pip install pillow
+# do note have to install os as it is a built in module
 from PIL import Image
 import os
 
-# Recursilvely Goes through the foldre in the folder_path and remove any filest that has
-
-folder_path = r"C:\Wayan\Automatic Screen Shots\Temp"
+# change the folder_path to the folder you want to delete the dark images from
+folder_path = r"C:\WW\Automatic Screen Shots\Temp"
 
 darkness_threshold = 50  # Change this to adjust the darkness threshold
 dark_pixel_pct = 0.99  # Change this to adjust the minimum percentage of dark pixels

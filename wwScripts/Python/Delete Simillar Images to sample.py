@@ -1,8 +1,8 @@
 from PIL import Image, ImageChops
 import os
 
-folder_path = r"C:\Wayan\Automatic Screen Shots\Temp"
-sample_image_path = r"C:\Users\auwwaya\OneDrive - Essity\Desktop\2023-06-26 12.25.16.jpg"
+folder_path = r"C:\WW\Automatic Screen Shots\Temp"
+sample_image_path = r"C:\WW\Automatic Screen Shots\Temp\2024-01-04 17.16.30.jpg"
 
 # Recursively goes through the folder in the folder_path and removes any files that look like the sample image
 def delete_similar_images(folder_path, sample_image_path, threshold=5):
