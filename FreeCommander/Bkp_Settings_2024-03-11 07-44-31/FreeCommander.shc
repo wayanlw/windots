@@ -35,8 +35,6 @@ actEditPaste=Ctrl+V
 actFileLinkToFileList=Shift+Ctrl+L
 actViewModeImages=I
 
-
-
 [ShortCuts]
 actFileView=0
 actFileEdit=0
@@ -49,6 +47,7 @@ actDirCreate=Shift+Ctrl+N
 actDirHistory=0
 actDirBack=Left
 actEditCurDir2Clip=Shift+Ctrl+G
+actFileViewEx=Space
 actDirFavoriten=Alt+F
 actDirGoTo=Ctrl+G
 actDirFavoritenEdit=Shift+Alt+F
@@ -69,8 +68,11 @@ actFileCreateNewFile=Ctrl+N
 actDirFavoritenAddCurrent=Shift+Ctrl+A
 actDirOpenInOtherPaneNewTab=Shift+Right
 actDirOpenInSamePaneNewTab=Shift+Left
-actViewTabMove=Shift+Ctrl+Right
+actViewTabMove=Ctrl+Alt+E
 actDirFavoriteItemsTree=0
 actViewLayoutShowPopupMenu=Shift+Ctrl+L
+actHelpIndex=F1
+
 [ShortCuts2]
 actDirBack=`
+
