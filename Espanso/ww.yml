@@ -1,0 +1,175 @@
+matches:
+
+ # Date/Time -----------------------------------------
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d/%m/%Y"
+          
+  - trigger: "ds  "
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d.%m.%Y"
+          
+  - trigger: "dd  "
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%y%m%d"
+          
+  - trigger: "dt  "
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%y%m%d_%H%M"
+                
+  - trigger: ":now"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M"
+
+
+ # Print the output of a shell command -----------------------------------------
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+  
+  
+ # My Contact Information ----------------------------------------- 
+  - trigger: ":lux"
+    replace: "luxithaw@gmail.com"
+  - trigger: ":lak"
+    replace: "lakshithaw@gmail.com"
+  - trigger: ":ess"
+    replace: "wayan.wijesinghe@essity.com"
+  - trigger: ":mytp"
+    replace: "0466200004"
+  - trigger: ":siri"
+    replace: "0482165487"
+
+  - regex: "(Contact|ct) (all|em) (all|lux)"
+    replace: "luxithaw@gmail.com"
+  - regex: "(Contact|ct) (all|em) (all|lak)"
+    replace: "lakshithaw@gmail.com"
+  - regex: "(Contact|ct) (all|em) (all|ess)"
+    replace: "wayan.wijesinghe@essity.com"
+  - regex: "(Contact|ct) (all|ad) (all|au)"
+    replace: "1/122 Harold Road, Noble Park VIC 3174"
+  - regex: "(Contact|ct) (all|ad) (all|lk)"
+    replace: "23/64 Diyawanna Gardens, Pagoda Road, Nugegoda"
+  - regex: "(Contact|ct) (all|tp) (all|lak)"
+    replace: "0466200004"
+  - regex: "(Contact|ct) (all|tp) (all|dil)"
+    replace: "0466200044"
+  - regex: "(Contact|ct) (all|tp) (all|siri)"
+    replace: "0482165487"
+  - regex: "(Contact|ct) (all|tp) (all|lk)"
+    replace: "0773336633"
+
+  - trigger: ":mycon"
+    replace: "{{form1.fruit}}"
+    vars:
+      - name: "form1"
+        type: form
+        params:
+          layout: "[fruit](fruit)"
+          fields:
+            fruit:
+              type: list # or `choice`
+              values:
+                - lakshithaw@gmail.com
+                - luxithaw@gmail.com
+                - wayan.wijesinghe@essity.com
+                - 1/122 Harold Road, Noble Park VIC 3174
+                - 0466200004
+
+
+ # Multi-line replacement text
+  - trigger: ":meet"
+    force_clipboard: true
+    replace: |
+      Purpose
+        - $|$
+      
+      Agenda
+        - 
+
+ # Email / Chat -----------------------------------------
+  - trigger: "re  "
+    replace: |
+      Regards, 
+      Wayan
+
+  - trigger: ":callme"
+    replace: "Can you please give me a call when you're free. Thanks."
+
+# Match with image
+# - trigger: ":image"
+#   image_path: "C:\\Wayan\\Automatic Screen Shots\\2023-03-25\\2023-03-25 13.38.51.jpg" 
+
+ # Financials  -----------------------------------------
+  - trigger: "nk  "
+    replace: "-$$|$k"
+  - trigger: "pnk  "
+    replace: "(-$$|$k)"
+  - trigger: "pk  "
+    replace: "+$$|$k"
+  - trigger: "ppk  "
+    replace: "(+$$|$k)"
+
+  - trigger: "nm  "
+    replace: "-$$|$m"
+  - trigger: "pnm  "
+    replace: "(-$$|$m)"
+  - trigger: "pm  "
+    replace: "+$$|$m"
+  - trigger: "ppm  "
+    replace: "(+$$|$m)"
+
+ # Markdown -----------------------------------------
+  - trigger: ":mdlink"
+    replace: "[$|$]({{clipboard}})"
+    vars:
+    - name: "clipboard"
+      type: "clipboard"
+
+ # Excel -----------------------------------------
+  - trigger: ":com"
+    replace: "+N(\"$|$\")"
+
+ # Emoji Site -----------------------------------------
+  - trigger: ":emoji"
+    replace: "https://www.webfx.com/tools/emoji-cheat-sheet/"
+
+ #Social Websites -----------------------------------------
+  - trigger: ":form"
+    replace: "{{form1.fruit}}"
+    vars:
+      - name: "form1"
+        type: form
+        params:
+          layout: "[fruit](fruit)"
+          fields:
+            fruit:
+              type: list # or `choice`
+              values:
+                - https://github.com/wayanlw
+                - https://au.linkedin.com/in/wayanwijesinghe
+
