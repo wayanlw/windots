@@ -43,7 +43,7 @@ from PIL import Image
 import os
 
 # change the folder_path to the folder you want to delete the dark images from
-folder_path = r"C:\WW\Automatic Screen Shots\Temp"
+folder_path = r"C:\WW\Automatic ScreenShots\Temp"
 
 darkness_threshold = 50  # Change this to adjust the darkness threshold
 dark_pixel_pct = 0.99  # Change this to adjust the minimum percentage of dark pixels

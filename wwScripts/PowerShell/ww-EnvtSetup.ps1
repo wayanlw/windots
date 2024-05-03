@@ -39,14 +39,11 @@ if ($result.ToLower() -eq "y") {
 		scoop install git aria2
 		scoop bucket add extras
 		$programs = @(
-			"7tt",
 			"beeftext",
 			"capture2text",
 			"cmder",
-			"cryptomator",
 			"dark",
 			"ditto",
-			"docto",
 			"dual-monitor-tools",
 			"everything",
 			"executor",
@@ -64,8 +61,6 @@ if ($result.ToLower() -eq "y") {
 			"sumatrapdf",
 			"switcheroo",
 			"vscode",
-			"whatsapp",
-			"windirstat",
 			"windows-terminal",
 			"xmousebuttoncontrol"
 		)
@@ -104,7 +99,7 @@ if ($result.ToLower() -eq "y") {
 $contextPaths = @(
 	"C:\Users\$env:UserName\scoop\apps\notepadplusplus\current\install-context.reg",
 	"C:\Users\$env:UserName\scoop\apps\7zip\current\install-context.reg",
-	"C:\Users\ww\scoop\apps\vscode\current\install-context.reg"
+	"C:\Users\$env:UserName\scoop\apps\vscode\current\install-context.reg"
 )
 
 if (Test-Path $contextPaths) {
@@ -114,6 +109,41 @@ if (Test-Path $contextPaths) {
 	}
 }
 
+
+# ———————————————————————————————————————————————————————————————————————————— #
+#                     Cloning git repos: Windots and Capsy                 	   #
+# ———————————————————————————————————————————————————————————————————————————— #
+
+# Define the URL for the Git repositories
+$windotUrl = "https://github.com/wayanlw/.windot"
+$capsyUrl = "https://github.com/wayanlw/capsy"
+
+# Define the destination folder
+$destinationFolder = "$([Environment]::GetFolderPath('MyDocuments'))\Git Repositories"
+
+# Create the destination folder if it doesn't exist
+if (!(Test-Path -Path $destinationFolder -PathType Container)) {
+    New-Item -Path $destinationFolder -ItemType Directory | Out-Null
+}
+
+# Clone the windot repository into the destination folder
+cd $destinationFolder
+git clone $windotUrl
+
+# Clone the capsy repository into the destination folder
+cd $destinationFolder
+git clone $capsyUrl
+
+# ——————————————————————————————— Capsy startup —————————————————————————————— #
+
+# Define the path to the capsy.exe program
+$capsyPath = "$([Environment]::GetFolderPath('MyDocuments'))\Git Repositories\.windot\capsy\capsy_mod.exe"
+
+# Create a shortcut to the capsy.exe program in the startup folder
+$shell = New-Object -ComObject WScript.Shell
+$shortcut = $shell.CreateShortcut("$([Environment]::GetFolderPath('Startup'))\capsy.lnk")
+$shortcut.TargetPath = $capsyPath
+$shortcut.Save()
 # ──────────────────────────────────────────────────────────────────────────── #
 #                             Copying Setting Files                            #
 # ──────────────────────────────────────────────────────────────────────────── #
@@ -184,41 +214,6 @@ else {
     Write-Host "No need to activate old menu. You're not running windows 11."
 }
 
-
-# ———————————————————————————————————————————————————————————————————————————— #
-#                           Cloning Windots and Capsy                          #
-# ———————————————————————————————————————————————————————————————————————————— #
-
-# Define the URL for the Git repositories
-$windotUrl = "https://github.com/wayanlw/.windot"
-$capsyUrl = "https://github.com/wayanlw/capsy"
-
-# Define the destination folder
-$destinationFolder = "$([Environment]::GetFolderPath('MyDocuments'))\Git Repositories"
-
-# Create the destination folder if it doesn't exist
-if (!(Test-Path -Path $destinationFolder -PathType Container)) {
-    New-Item -Path $destinationFolder -ItemType Directory | Out-Null
-}
-
-# Clone the windot repository into the destination folder
-cd $destinationFolder
-git clone $windotUrl
-
-# Clone the capsy repository into the destination folder
-cd $destinationFolder
-git clone $capsyUrl
-
-# ——————————————————————————————— Capsy startup —————————————————————————————— #
-
-# Define the path to the capsy.exe program
-$capsyPath = "$([Environment]::GetFolderPath('MyDocuments'))\Git Repositories\.windot\capsy\capsy_mod.exe"
-
-# Create a shortcut to the capsy.exe program in the startup folder
-$shell = New-Object -ComObject WScript.Shell
-$shortcut = $shell.CreateShortcut("$([Environment]::GetFolderPath('Startup'))\capsy.lnk")
-$shortcut.TargetPath = $capsyPath
-$shortcut.Save()
 
 # ———————————————————————————————————————————————————————————————————————————— #
 #                              Powershell Profile                              #
