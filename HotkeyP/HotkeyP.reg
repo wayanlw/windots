@@ -1,0 +1,56 @@
+hotKeys7 9 2
+Open Excel
+C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE
+
+
+
+131073 49 8 0 1 0 -1 0 1
+Open Free Commander
+C:\Users\auwwaya\scoop\apps\freecommander\current\FreeCommander.exe
+
+
+
+196609 50 8 0 1 0 -1 0 1
+Open OUTLOOK
+C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE
+
+
+
+262145 51 8 0 1 0 -1 0 1
+Open Teams
+C:\Users\auwwaya\AppData\Local\Microsoft\WindowsApps\ms-teams.exe
+
+
+
+327681 52 8 0 1 0 -1 0 1
+Launch Brave
+C:\Users\auwwaya\AppData\Local\Vivaldi\Application\vivaldi.exe
+
+
+
+393217 53 8 0 1 0 -1 0 1
+Obsidian
+C:\Users\auwwaya\scoop\apps\obsidian\current\Obsidian.exe
+obsidian://open?vault=ww-Notes
+
+
+655361 57 8 0 1 0 -1 0 1
+Notepad++
+C:\Users\auwwaya\scoop\apps\notepadplusplus\current\notepad++.exe
+
+
+
+720897 48 8 0 1 0 -1 0 1
+JumpToFolder
+C:\WW\PS\JumpToFolder_1.0.8_x64\JumpToFolder.exe
+-jump
+
+
+0 0 0 0 1 0 -1 0 0
+Launch KeepassXC
+C:\Users\auwwaya\scoop\apps\keepassxc\current\KeePassXC.exe
+
+
+
+2424833 75 3 0 1 0 -1 0 0
+OpenApps
